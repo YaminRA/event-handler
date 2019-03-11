@@ -1,0 +1,45 @@
+html {
+    background-color: #fdfdfd;
+}
+
+h3 {
+    text-align: center;
+}
+
+.jumbotron {
+    padding: 2rem;
+}
+
+.selector > label {
+    width: 100%;
+}
+
+.selector > select {
+    max-width: 50%;
+    display: flex;
+    justify-content: space-between;
+    float: left;
+}
+
+.dates > label {
+    width: 100%;
+}
+
+.dates > input {
+    max-width: 50%;
+    display: flex;
+    justify-content: space-between;
+    float: left;
+}
+
+.custom-switch {
+    float: left;
+    padding-right: 1rem;
+    margin-top: 4px;
+}
+
+.btn {
+    float: left;
+    margin-right: 1rem;
+}
+

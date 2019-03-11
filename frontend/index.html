@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Event handler</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css" />
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <h3 style="color: #ddd;">Administrador de eventos</h3>
+    </nav>
+</header>
+
+<body>
+    <div class="jumbotron">
+        <div class="col-5" id="newEventContainer" style="float: inline-end; display: none;">
+            <div class="card mb-3">
+                <h3 class="card-header">Crear nuevo evento</h3>
+                <div class="card-body new-event">
+                    <form id="event-form" class="eventForm">
+                        <div id="_id" style="display: none;"></div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="inputDefault">Nombre del evento</label>
+                            <input type="text" class="form-control" placeholder="Seminario Magistral para creación de Memes..."
+                                id="name" />
+                        </div>
+                        <div class="form-group selector">
+                            <label class="col-form-label" for="category">Tipo de evento</label>
+                            <select class="custom-select" id="category">
+                                <option selected="" value="Conferencia">Conferencia</option>
+                                <option value="Seminario">Seminario</option>
+                                <option value="Congreso">Congreso</option>
+                                <option value="Curso">Curso</option>
+                            </select>
+                            <select class="custom-select form-group" id="event_delivery">
+                                <option selected="" value="Presencial">Presencial</option>
+                                <option value="Virtual">Virtual</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="place">Sede del evento</label>
+                            <input type="text" class="form-control" placeholder="Museo de Antropología e Historia..."
+                                id="place" />
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="address">Dirección de la sede del evento</label>
+                            <input type="text" class="form-control" placeholder="Periférico Blvrd Manuel Ávila Camacho 170, Reforma..."
+                                id="address" />
+                        </div>
+                        <div class="form-group dates">
+                            <label class="col-form-label" for="start_date_day">Fecha de inicio del evento</label>
+                            <input type="date" class="form-control" value="2019-03-10" id="start_date_day" />
+                            <input type="time" class="form-control form-group" value="08:00:00" id="start_date_time" />
+                        </div>
+                        <div class="form-group dates">
+                            <label class="col-form-label" for="end_date_day">Fecha de fin del evento</label>
+                            <input type="date" class="form-control" value="2019-03-10" id="end_date_day" />
+                            <input type="time" class="form-control form-group" value="08:00:00" id="end_date_time" />
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="save-event">
+                            Crear evento
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="update-event">
+                            Actualizar
+                        </button>
+                        <button type="button" class="btn btn-warning" id="cancel-event">
+                            Cancelar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="categories">
+            <fieldset class="form-group">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input category" id="customSwitch1" value="Conferencia"
+                        checked="true" />
+                    <label class="custom-control-label" for="customSwitch1">Conferencia</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input category" id="customSwitch2" checked="true"
+                        value="Seminario" />
+                    <label class="custom-control-label" for="customSwitch2">Seminario</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input category" id="customSwitch3" checked="true"
+                        value="Congreso" />
+                    <label class="custom-control-label" for="customSwitch3">Congreso</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input category" id="customSwitch4" checked="true"
+                        value="Curso" />
+                    <label class="custom-control-label" for="customSwitch4">Curso</label>
+                </div>
+                <button type="submit" class="btn btn-primary filter-events">
+                    Filtrar
+                </button>
+                <button type="button" class="btn btn-success" id="create-event">
+                    Nuevo
+                </button>
+            </fieldset>
+        </div>
+        <div id="events-cards" class="events-cards"></div>
+    </div>
+</body>
+
+</html>
