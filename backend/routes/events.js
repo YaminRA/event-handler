@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 const Event = require('../models/event');
+const uEvent = require('../models/uEvent');
 
 router.get('/', async (req, res) => {
     const events = await Event.find();
@@ -38,6 +39,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     const {
+        id,
         name,
         category,
         event_delivery,
@@ -46,7 +48,8 @@ router.put('/:id', async (req, res) => {
         start_date,
         end_date
     } = req.body;
-    const updateEvent = new Event({
+    const updateEvent = new uEvent({
+        id,
         name,
         category,
         event_delivery,
@@ -55,7 +58,7 @@ router.put('/:id', async (req, res) => {
         start_date,
         end_date,
     });
-    await updateEvent.save();
+    await updateEvent.updateOne();
     console.log(updateEvent);
     res.send(updateEvent);
 });
