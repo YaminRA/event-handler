@@ -1,6 +1,6 @@
 class EventService {
     constructor() {
-        this.URI = 'http://localhost:3000/api/events';
+        this.URI = '/api/events';
     }
 
     async getEvents() {
