@@ -99,7 +99,6 @@ document.getElementById('update-event').addEventListener('click', e => {
     };
 
     const ui = new UI();
-    //console.log(formData);
     ui.updateEvent(formData);
     e.preventDefault();
 });

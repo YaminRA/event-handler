@@ -145,7 +145,7 @@ class UI {
     }
 
     async updateEvent(event) {
-        await eventService.putEvent(JSON.stringify(event));
+        await eventService.putEvent(event);
         document.getElementById('event-form').reset();
         this.createEvent();
         this.renderEvents();

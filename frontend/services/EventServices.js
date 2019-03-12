@@ -1,6 +1,6 @@
 class EventService {
     constructor() {
-        this.URI = '/api/events';
+        this.URI = 'http://localhost:3000/api/events';
     }
 
     async getEvents() {
@@ -23,12 +23,10 @@ class EventService {
     }
 
     putEvent(event) {
-        const eventId = JSON.parse(event)._id;
         const xhr = new XMLHttpRequest();
-        xhr.open('PUT', `${this.URI}/${eventId}`);
+        xhr.open('PUT', `${this.URI}/${event._id}`);
         xhr.setRequestHeader('Content-type', 'application/json');
-        xhr.send(JSON.parse(event));
-        console.log(event);
+        xhr.send(JSON.stringify(event));
     }
 
     async deleteEvent(eventId) {
